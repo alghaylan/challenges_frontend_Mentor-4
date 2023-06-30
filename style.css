@@ -1,0 +1,148 @@
+:root{
+    --clr_primary:hsl(158, 36%, 37%);
+    --cl_secondary: hsl(30, 38%, 92%);
+
+    --clr_neutral_dark : hsl(212, 21%, 14%);
+    --clr_neutral_gry :  hsl(228, 12%, 48%);
+    --clr_neutral_white : hsl(0, 0%, 100%);
+    
+    --ff_bold: 'Fraunces', serif;
+    --ff_accent: 'Montserrat', sans-serif;
+
+    --fw_regular : 500;
+    --fw_bolder: 700;
+
+}
+/* 1- Use a more intuitive box-sizing model */
+*, *::after, *::before{
+   box-sizing: border-box;
+}
+ /* 2- Remove default margin */
+ * {
+    margin: 0;
+ }
+ /* Typographic  tweaks */
+ /*3- Add accessible line-height */
+ /* 4- 4. Improve text rendering */
+ body{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+ }
+
+ /* Improve media defaults */
+ img, picture, svg, canvas, video {
+    display: block;
+    max-width: 100%;
+ }
+
+ /* 6-Remove built-in from typography style */
+ input, button, textarea, select {
+    font: inherit;
+  }
+  /* 7- Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  .visually-hidden:not(:focus):not(:active){
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  /* general styling */
+  body{
+    font-family: var(--ff_accent);
+    font-family: var(--ff_bold);
+display: grid;
+place-items: center;
+background-color:var(--cl_secondary);
+color: var(--clr_neutral_gry);
+font-size: 0.875rem;
+display: grid;
+place-content: center;
+min-height: 100vh;
+margin: 1rem;
+  }
+  main{
+    background-color: var(--clr_neutral_white);
+   border-radius: .5rem;
+   overflow: hidden;
+   max-width: 600px;
+  }
+@media (min-width: 550px) {
+  main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+}
+ 
+  .product{
+    display: grid;
+    padding: 1.5rem;
+    gap: 1rem;
+    
+  }
+ 
+    
+
+  .product > p:first-child{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+  }
+  .product h1{
+    color: var(--clr_neutral_dark);
+    font-weight: var(--fw_bolder);
+    font-family: var(--ff_bold);
+    line-height: 1.7rem;
+    font-size: 2rem;
+  }
+  .product_price{
+    display: flex;
+  align-items: center;
+gap: 10px;
+  }
+  .product_price p:first-child{
+    color:var(--clr_primary);
+    font-weight: var(--fw_bolder);
+    font-size: 2rem;
+    font-family: var(--ff_accent);
+    
+   }
+  .product_price p:last-child{
+   color:var(--clr_neutral_gry);
+   font-weight: var(--fw_bolder);
+   font-size: .75rem;
+   font-family: var(--ff_accent);
+   text-decoration: line-through;
+  }
+  .button{
+    cursor: pointer;
+    background-color: var(--clr_primary);
+    color: var(--clr_neutral_white);
+    padding: 1em 1.5em;
+border-radius: .75em;
+    border:0;
+    font-family: var(--ff_bold);
+    font-weight: var(--fw_bolder);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+
+  }
+  .button:is(:hover, :focus){
+   background-color: hsl(158, 36%, 27%);
+  }
+  .button[data-icon="shopping-cart" ]::before{
+    background-image: url("images/icon-cart.svg");
+    content: "";
+    height: 16px;
+    width: 16px;
+    margin-block-end: 10px;
+  
+  }
